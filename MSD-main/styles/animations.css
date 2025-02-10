@@ -1,0 +1,211 @@
+/* Enhanced Fade In and Slide Up Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Smooth Reveal Animation */
+@keyframes smoothReveal {
+    from {
+        opacity: 0;
+        transform: scale(0.98) translateY(10px);
+        filter: blur(5px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* Gradient Animation */
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Glow Effect */
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+        text-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+    }
+}
+
+/* Text Gradient Animation */
+@keyframes textGradient {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Apply animations to elements */
+.hero-content h1 {
+    background: linear-gradient(45deg, #ff0000, #ff6b6b, #ff0000);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: textGradient 5s ease infinite;
+}
+
+.hero-content {
+    animation: smoothReveal 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.class-card, .plan-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.class-card:hover, .plan-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.class-card i {
+    animation: float 3s ease-in-out infinite;
+}
+
+.plan-card .price {
+    animation: glow 3s ease-in-out infinite;
+}
+
+.cta-button {
+    background: linear-gradient(45deg, #ff0000, #ff6b6b);
+    background-size: 200% auto;
+    animation: gradientFlow 3s ease infinite;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+    background-position: right center;
+}
+
+.nav-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #ff0000, #ff6b6b);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: blur(5px);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+/* Loading animation enhancement */
+.loading-overlay {
+    background: linear-gradient(45deg, #000000, #1a1a1a);
+    background-size: 200% 200%;
+    animation: gradientFlow 3s ease infinite;
+}
+
+.loading-logo {
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* Smooth transition for images */
+img {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: brightness(1);
+}
+
+img:hover {
+    filter: brightness(1.1) contrast(1.1);
+    transform: scale(1.02);
+}
+
+/* Enhanced form animations */
+.contact-form input,
+.contact-form textarea {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid transparent;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    transform: translateY(-4px);
+    border-color: #ff0000;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.1);
+}
+
+/* FAQ animations */
+.faq-question {
+    transition: color 0.3s ease;
+}
+
+.faq-item:hover .faq-question {
+    color: #ff0000;
+}
+
+/* Social links animation */
+.social-links a {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-links a:hover {
+    transform: scale(1.2) rotate(10deg);
+    color: #ff0000;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}

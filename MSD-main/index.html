@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./assets/logo.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="./assets/logo.png">
+    <title>MSD Fitness - Your Path to Fitness Excellence</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <style>
+        @font-face {
+            font-family: 'Demonized';
+            src: url('font msd/Demonized.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'Sakana';
+            src: url('font msd/sakana/Sakana.ttf') format('truetype');
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation bar */
+        .navbar .nav-links a {
+            font-family: 'Sakana';
+            font-size: 24px;
+        }
+
+        /* Main headings */
+        section:not(#contact) h2 {
+            font-family: 'Sakana';
+            font-size: 48px;
+            margin-bottom: 30px;
+        }
+
+        /* Transform your life heading */
+        .hero-content h1 {
+            font-family: 'Sakana';
+            font-size: 64px;
+        }
+
+        /* Join Now button */
+        .cta-button {
+            font-family: 'Sakana';
+            font-size: 28px;
+        }
+
+        /* Our Facilities heading */
+        #gym h2 {
+            font-family: 'Sakana';
+            font-size: 48px;
+        }
+
+        /* Our Classes heading */
+        #classes h2 {
+            font-family: 'Sakana';
+            font-size: 48px;
+        }
+
+        /* Membership Plans heading */
+        .memberships h2 {
+            font-family: 'Sakana';
+            font-size: 48px;
+        }
+
+        /* What Our Members Say heading */
+        .testimonials h2 {
+            font-family: 'Sakana';
+            font-size: 48px;
+        }
+
+        /* FAQ heading */
+        .faq h2 {
+            font-family: 'Sakana';
+            font-size: 48px;
+        }
+
+        /* Our Facilities heading */
+        #gym h2 {
+            font-family: 'Sakana';
+            font-size: 48px;
+        }
+
+        /* Our Classes heading */
+        #classes h2 {
+            font-family: 'Sakana';
+            font-size: 48px;
+        }
+
+        /* Membership Plans heading */
+        .memberships h2 {
+            font-family: 'Sakana';
+            font-size: 48px;
+        }
+
+        /* What Our Members Say heading */
+        .testimonials h2 {
+            font-family: 'Sakana';
+            font-size: 48px;
+        }
+
+        /* FAQ heading */
+        .faq h2 {
+            font-family: 'Sakana';
+            font-size: 48px;
+        }
+
+        #classes {
+            font-family: 'sakana';
+            margin: 0; /* Ensure no margin for seamless transition */
+        }
+        #classes h2, .memberships h2 {
+            font-family: 'sakana';
+            color: white;
+        }
+        #classes h3 {
+            font-family: 'sakana';
+        }
+        .a {
+            font-family: 'Poppins', sans-serif;
+        }
+        #cardio, #personal-training {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin: 0 auto;
+            max-width: 300px; /* added max-width to center the cards */
+        }
+        .class-card {
+            width: 300px; /* Adjusted width */
+            margin: 20px; /* Increased margin for better spacing */
+            padding: 20px; /* Increased padding for better content spacing */
+            text-align: center; /* Center text within the card */
+        }
+        .classes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Changed to grid layout for better alignment */
+            gap: 20px; /* Added gap for better spacing */
+            justify-content: center;
+        }
+        .plan-card {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .plan-card:hover {
+            transform: translateY(-5px);
+        }
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Changed to grid layout for better alignment */
+            gap: 30px; /* Added gap for better spacing */
+            justify-content: center;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .plan-card {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .plan-card h3 {
+            font-family: 'sakana';
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: white;
+        }
+        .plan-card .price {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 15px 0;
+            color: #ff0000;
+        }
+        .plan-card .a {
+            color: #ffffff;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+        .classes{
+            background: 
+        linear-gradient(to top, 
+            rgba(0, 0, 0, 0.95) 0%,
+            rgba(0, 0, 0, 0.8) 40%,
+            rgba(147, 0, 2, 0.8) 100%
+        )
+        }
+        .memberships {
+            background: 
+        linear-gradient(to top, 
+            rgba(147, 0, 2, 0.8) 0%,
+            rgba(0, 0, 0, 0.8) 40%,
+            rgba(0, 0, 0, 0.95) 100%
+        )
+
+        }
+        #gym {
+            margin-bottom: 0; /* Remove bottom margin */
+        }
+        #classes {
+            margin-top: 0; /* Remove top margin */
+             /* Optional: Add a border to blend with gym section */
+        }
+        .class-card h3 {
+            font-family: 'sakana';
+            color: #ffffff;
+            margin: 15px 0;
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .class-card p {
+            color: #ffffff;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .class-card h3 {
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition */
+}
+
+.class-card:hover h3 {
+    color: red; /* Change color to red on hover */
+    text-decoration: underline; /* Underline text on hover */
+}
+
+.class-card {
+    cursor: pointer;
+}
+
+.testimonials{
+    background: 
+        linear-gradient(to top, 
+            rgba(0, 0, 0, 0.95) 0%,
+            rgba(0, 0, 0, 0.8) 40%,
+            rgba(147, 0, 2, 0.8) 100%);
+    margin: 0;
+    padding: 20px;
+}
+
+.testimonials h2, .faq h2 {
+    font-family: 'sakana';
+    color: white;
+}
+
+.faq{
+    background:
+    linear-gradient(to top, 
+            rgba(147, 0, 2, 0.8) 0%,
+            rgba(0, 0, 0, 0.8) 40%,
+            rgba(0, 0, 0, 0.95) 100%);
+    margin: 0;
+    padding: 20px;          
+}
+
+        .slider-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider {
+            position: relative;
+            width: 100%;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .slider-button {
+            position: fixed;
+            top: 50%;
+            margin-top: -25px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-button i {
+            font-size: 20px;
+        }
+
+        .slider-button:hover {
+            background: rgba(255, 0, 0, 0.7);
+        }
+
+        .prev {
+            left: 20px;
+        }
+
+        .next {
+            right: 20px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .slide img {
+                height: 400px;
+            }
+            
+            .slider-button {
+                width: 40px;
+                height: 40px;
+                margin-top: -20px;
+            }
+            
+            .slider-button i {
+                font-size: 16px;
+            }
+        }
+
+        /* Media Queries for Responsive Plan Cards */
+        @media screen and (max-width: 1200px) {
+            .plans-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 15px;
+            }
+        }
+        
+        @media screen and (max-width: 600px) {
+            .plans-grid {
+                grid-template-columns: 1fr;
+                padding: 10px;
+            }
+            .plan-card {
+                padding: 20px;
+            }
+        }
+
+        /* Enhanced UI Styles */
+        :root {
+            --primary-red: #ff0000;
+            --primary-dark: #1a1a1a;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background: linear-gradient(135deg, #000000, var(--primary-dark));
+        }
+
+        .navbar {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('./assets/hero-bg.webp') center/cover fixed;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+            animation: pulseGradient 4s ease-in-out infinite;
+        }
+
+        @keyframes pulseGradient {
+            0%, 100% {
+                opacity: 0.8;
+            }
+            50% {
+                opacity: 0.6;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 100px 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-gradient {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(147, 0, 2, 0.8));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at top right, rgba(255, 0, 0, 0.1), transparent);
+            pointer-events: none;
+        }
+
+        .class-card, .plan-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .class-card::before, .plan-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.1),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .class-card:hover::before, .plan-card:hover::before {
+            left: 100%;
+        }
+
+        .class-card i {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-red);
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+        }
+
+        .plan-card .price {
+            font-size: 2.5rem;
+            color: var(--primary-red);
+            margin: 20px 0;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+        }
+
+        .faq-item {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .faq-item:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-info {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            color: #ffffff;
+        }
+
+        .contact-info h3 {
+            color: #ff0000;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+        }
+
+        .contact-info p, 
+        .contact-info li {
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .working-hours span {
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+
+        .contact-info i {
+            color: #ff0000;
+            margin-right: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .social-links svg {
+            width: 24px;
+            height: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover svg {
+            transform: scale(1.1);
+        }
+
+        .map {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--glass-border);
+        }
+
+        .footer {
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--glass-border);
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .class-card, .plan-card {
+                padding: 20px;
+            }
+        }
+        
+        .contact h2 {
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .facilities h2 {
+            font-family: 'sakana';
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+     <!-- Loading Animation -->
+     <div class="loading-overlay">
+        <div class="loading-content">
+            <img src="./assets/logo.png" alt="MSD Fitness Logo" class="loading-logo">
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#home">
+                    <img src="./assets/logo.png" alt="MSD Fitness Logo">
+                </a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#gym" class="nav-link">Gym</a></li>
+                <li><a href="#classes" class="nav-link">Classes</a></li>
+                <li><a href="#memberships" class="nav-link">Memberships</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Transform Your Life</h1>
+            <p>Join MSD Fitness and embark on your fitness journey today</p>
+            <a href="#contact" class="cta-button">Join Us Today</a>
+        </div>
+    </section>
+
+    <!-- Gym Section -->
+    <section id="gym" class="gym facilities">
+        <h2>Our Facilities</h2>
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="./assets/facilities/gym-1.jpg" alt="Weight Training Area" loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/facilities/gym-2.jpg" alt="Cardio Zone" loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/facilities/gym-3.jpg" alt="Free Weights Section" loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/facilities/gym-4.jpg" alt="Functional Training Area" loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/facilities/gym-5.jpg" alt="Yoga Studio" loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/facilities/gym-6.jpg" alt="Stretching Area" loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/facilities/gym-7.jpg" alt="CrossFit Zone" loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/facilities/gym-8.jpg" alt="Power Lifting Platform" loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/facilities/gym-9.jpg" alt="Group Exercise Room" loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/facilities/gym-10.jpg" alt="Spinning Studio" loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/facilities/gym-11.jpg" alt="Boxing Area" loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/facilities/gym-12.jpg" alt="Recovery Zone" loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/facilities/gym-13.jpg" alt="Locker Room" loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/facilities/gym-14.jpg" alt="Protein Bar" loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/facilities/gym-15.jpg" alt="Reception Area" loading="lazy">
+                    </div>
+                </div>
+                <button class="slider-button prev" aria-label="Previous slide">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-button next" aria-label="Next slide">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Classes Section -->
+    <section id="classes" class="classes">
+        <h2>Our Classes</h2>
+        <div class="classes-grid">
+            <div class="class-card" id="group-workout">
+                <i class="fas fa-dumbbell"></i>
+                <h3>Group Workout</h3>
+                <p class="a">Improve strength and endurance with functional movements</p>
+            </div>
+            <div class="class-card" id="dumbbells-workout">
+                <i class="fas fa-weight-hanging"></i>
+                <h3>Dumbbells Workout</h3>
+                <p class="a">Build muscle and improve overall fitness</p>
+            </div>
+            <div class="class-card" id="crossfit-workout">
+                <i class="fas fa-pray"></i>
+                <h3>CrossFit Workout</h3>
+                <p class="a">Enhance flexibility, balance, and mental focus</p>
+            </div>
+            <div class="class-card" id="stick-workout">
+                <i class="fas fa-running"></i>
+                <h3>Stick Workout</h3>
+                <p class="a">Boost metabolism and burn calories efficiently</p>
+            </div>
+            <div class="class-card" id="cardio">
+                <i class="fas fa-running"></i>
+                <h3>Cardio</h3>
+                <p class="a">Boost metabolism and burn calories efficiently</p>
+            </div>
+            <div class="class-card" id="personal-training">
+                <i class="fas fa-running"></i>
+                <h3>Personal Training</h3>
+                <p class="a">Boost metabolism and burn calories efficiently</p>
+            </div>
+        </div>
+    </section>
+    
+
+
+    <!-- Memberships Section -->
+    <section id="memberships" class="memberships">
+        <h2>Membership Plans</h2>
+        <div class="plans-grid">
+            <div class="plan-card">
+                <h3>YEARLY</h3>
+                <div class="price">5999 Rs</div>
+                <div class="a">Access to all facilities, Unlimited classes, Personalized coaching</div>
+            </div>
+            <div class="plan-card">
+                <h3>6 MONTHS</h3>
+                <div class="price">3999 Rs</div>
+                <div class="a">Access to all facilities, Unlimited classes, Personalized coaching</div>
+            </div>
+            <div class="plan-card">
+                <h3>3 MONTHS</h3>
+                <div class="price">1999 Rs</div>
+                <div class="a">Access to all facilities, Unlimited classes, Personalized coaching</div>
+            </div>
+            <div class="plan-card">
+                <h3>1 MONTH</h3>
+                <div class="price">999 Rs</div>
+                <div class="a">Access to all facilities, Unlimited classes, Personalized coaching</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Members Say</h2>
+        <script src="https://static.elfsight.com/platform/platform.js" async></script>
+        <div class="elfsight-app-8e4a7d2c-3d64-41a5-aa7b-d71b1b9a115b" data-elfsight-app-lazy></div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">What equipment do you have?</div>
+                <div class="faq-answer">We offer state-of-the-art cardio and strength training equipment, free weights, and specialized zones for different workout styles.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Do you offer personal training?</div>
+                <div class="faq-answer">Yes, we have certified personal trainers available for one-on-one sessions. Contact us for more information.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can I freeze my membership?</div>
+                <div class="faq-answer">Yes, you can freeze your membership for up to 3 months per year with valid reason.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>#67 hunsur main road Ganapathi temple, near post office, Hootagalli, Mysuru, Karnataka 570018</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+91 9036813070</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>info@msdfitness.com</p>
+                </div>
+                <div class="working-hours">
+                    <h3><i class="fas fa-clock"></i> Working Hours</h3>
+                    <ul>
+                        <li><span>Monday - Friday:</span> 5:00 AM - 11:00 PM</li>
+                        <li><span>Saturday:</span> 6:00 AM - 10:00 PM</li>
+                        <li><span>Sunday:</span> 7:00 AM - 8:00 PM</li>
+                    </ul>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/msd_i_fitness_gym/?hl=en" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center;">
+                        <svg version="1.1" viewBox="0 0 19.97 19.97" style="width:25px;height:25px">
+                            <defs>
+                                <linearGradient id="svgicon_icon-instagram_a" x1="-46.05" y1="24.8" x2="-46.05" y2="25.79" gradientTransform="matrix(19.97 0 0 -19.97 929.29 515.09)" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#e09b3d"></stop>
+                                    <stop offset=".3" stop-color="#c74c4d"></stop>
+                                    <stop offset=".6" stop-color="#c21975"></stop>
+                                    <stop offset="1" stop-color="#7024c4"></stop>
+                                </linearGradient>
+                                <linearGradient id="svgicon_icon-instagram_b" x1="-43.76" y1="24.15" x2="-43.76" y2="26.06" gradientTransform="matrix(10.33 0 0 -10.33 461.86 269.33)" xlink:href="#svgicon_icon-instagram_a"></linearGradient>
+                                <linearGradient id="svgicon_icon-instagram_c" x1="-28.7" y1="17.8" x2="-28.7" y2="25.78" gradientTransform="matrix(2.47 0 0 -2.47 86.18 63.96)" xlink:href="#svgicon_icon-instagram_a"></linearGradient>
+                            </defs>
+                            <path d="M14 0H6a6 6 0 00-6 6v8a6 6 0 006 6h8a6 6 0 006-6V6a6 6 0 00-6-6zm4 14a4 4 0 01-4 4H6a3.94 3.94 0 01-4-4V6a3.93 3.93 0 014-4h8a3.94 3.94 0 014 4v8z" fill="url(#svgicon_icon-instagram_a)"></path>
+                            <path d="M10 4.82A5.17 5.17 0 1015.15 10 5.17 5.17 0 0010 4.82zm0 8.32A3.16 3.16 0 1113.14 10 3.15 3.15 0 0110 13.14z" fill="url(#svgicon_icon-instagram_b)"></path>
+                            <circle cx="15.16" cy="4.86" r="1.24" fill="url(#svgicon_icon-instagram_c)"></circle>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d487.2236673110241!2d76.58052370444927!3d12.342301599999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baf7b126fa95d8b%3A0x276b559a0aaf63e0!2sMSD%20%22I%22%20FITNESS%20CENTER%20(dilip%20kumar)!5e0!3m2!1sen!2sin!4v1707220165121!5m2!1sen!2sin" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 MSD Fitness. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav a');
+            const sections = document.querySelectorAll('section');
+            
+            // Function to update active nav link based on scroll position
+            function updateActiveNavLink() {
+                let currentSectionId = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (window.pageYOffset >= sectionTop - 150 && 
+                        window.pageYOffset < sectionTop + sectionHeight - 150) {
+                        currentSectionId = section.id;
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    const href = link.getAttribute('href').substring(1); // Remove #
+                    if (href === currentSectionId) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }
+
+            // Update active link on scroll
+            window.addEventListener('scroll', updateActiveNavLink);
+            
+            // Handle smooth scrolling for all sections
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        const section = document.querySelector(href);
+                        if (!section) return;
+                        
+                        const windowHeight = window.innerHeight;
+                        const sectionRect = section.getBoundingClientRect();
+                        let offset = sectionRect.top + window.pageYOffset - (windowHeight - sectionRect.height) / 2;
+                        
+                        // Apply specific offsets for different sections
+                        if (href === '#gym') {
+                            offset -= 55;
+                        } else if (href === '#contact' || href === '#testimonials') {
+                            offset -= 40;
+                        } else if (href === '#classes') {
+                            offset -= 35;
+                        }
+                        
+                        window.scrollTo({
+                            top: offset,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+
+
+        window.addEventListener('scroll', updateActiveNavLink);
+            
+            // Handle smooth scrolling for all sections
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        const section = document.querySelector(href);
+                        if (!section) return;
+                        
+                        const windowHeight = window.innerHeight;
+                        const sectionRect = section.getBoundingClientRect();
+                        let offset = sectionRect.top + window.pageYOffset - (windowHeight - sectionRect.height) / 2 -15;
+                        
+                        // Apply specific offsets for different sections
+                        if (href === '#gym') {
+                            offset -= 100;
+                        }
+                        
+                        window.scrollTo({
+                            top: offset,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        
+        
+    </script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/slider.js"></script>
+</body>
+</html>
